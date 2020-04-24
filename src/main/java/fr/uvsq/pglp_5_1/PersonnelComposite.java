@@ -1,6 +1,7 @@
 package fr.uvsq.pglp_5_1;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class PersonnelComposite implements PersonnelInterface{
 	
@@ -27,6 +28,11 @@ public class PersonnelComposite implements PersonnelInterface{
 		
 		return this;
 			
+	}
+	
+	public Iterator<PersonnelInterface> getIterator()
+	{
+		return p.iterator();
 	}
 	
 	public void print()

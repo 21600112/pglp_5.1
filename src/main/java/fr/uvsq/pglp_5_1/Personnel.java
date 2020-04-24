@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 public class Personnel implements PersonnelInterface{
 	
+	private final int id;
 	private final String nom;
 	private final String prenom;
 	private final String fonction;
@@ -13,14 +14,16 @@ public class Personnel implements PersonnelInterface{
 	
 	public static class Builder {
 		
+		private final int id;
 		private final String nom;
 		private final String prenom;
 		private final String fonction;
 		private final java.time.LocalDate dateNaissance;
 		private final ArrayList<String> numeroTelephone;
 		
-		Builder(final String nom,final String prenom,final String fonction,final LocalDate dateNaissance,final ArrayList<String> numeroTelephone)
+		Builder(final int id,final String nom,final String prenom,final String fonction,final LocalDate dateNaissance,final ArrayList<String> numeroTelephone)
 		{
+			this.id = id;
 			this.nom = nom;
 			this.prenom = prenom;
 			this.dateNaissance = dateNaissance;
@@ -36,6 +39,7 @@ public class Personnel implements PersonnelInterface{
 	}
 	
 	public Personnel(Builder b) {
+		this.id = b.id;
 		this.nom = b.nom;
 		this.prenom = b.prenom;
 		this.fonction = b.fonction;
@@ -50,5 +54,9 @@ public class Personnel implements PersonnelInterface{
 			System.out.print(i+ " ");
 	}
 	
+	public int getId()
+	{
+		return id;
+	}
 	
 }
