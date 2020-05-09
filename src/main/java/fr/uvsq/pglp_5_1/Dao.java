@@ -4,12 +4,16 @@ import java.util.ArrayList;
 
 public interface Dao<T> {
 	
-	void add(T object);
+	public abstract void serialize(T object, String file);
 	
-	T get(int id);
+	public abstract T deserialize(String file);
 	
-	void update(T object);
+	public abstract void add(T object);
 	
-	void remove(T object);
+	public abstract T get(int id);
+	
+	public abstract T update(T object);
+	
+	public abstract void remove(T object);
 	
 }
