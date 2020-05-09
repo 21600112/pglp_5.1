@@ -40,5 +40,9 @@ public class PersonnelComposite implements PersonnelInterface{
 		for(PersonnelInterface i : p)
 			i.print();
 	}
-
+	
+	public int getId()
+	{
+		return id;
+	}
 }
