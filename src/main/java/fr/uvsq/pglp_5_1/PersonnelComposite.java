@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class PersonnelComposite implements PersonnelInterface{
 	
-	private ArrayList<PersonnelInterface> p;
+	public ArrayList<PersonnelInterface> p;
 	private final int id;
 	private static int cpt = 0;
 		

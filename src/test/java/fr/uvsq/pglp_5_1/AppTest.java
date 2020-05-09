@@ -1,38 +1,49 @@
 package fr.uvsq.pglp_5_1;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import fr.uvsq.pglp_5_1.Personnel.Builder;
+import fr.uvsq.pglp_5_1.PersonnelComposite;
+import java.io.*;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
+public class AppTest
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+	@Test
+	public void testId() {
+		ArrayList<String> numTel = new ArrayList<String>();
+		numTel.add("06");
+		
+		Builder b = new Builder(1,"coo","kie","mangeurPro",LocalDate.of(1998, 1, 1),numTel);
+		
+		Personnel p = b.build();
+		
+		assertEquals(p.getId(),1);
+	}
+	
+	@Test
+	public void testComposite() {
+		ArrayList<String> numTel = new ArrayList<String>();
+		numTel.add("06");
+		
+		Builder b = new Builder(1,"coo","kie","mangeurPro",LocalDate.of(1998, 1, 1),numTel);
+		
+		Personnel pe = b.build();
+		
+		PersonnelComposite pc = new PersonnelComposite();
+		
+		pc.add(pe);
+		pc.remove(pe);
+		assertEquals(pc.p.size(), 0);
+	}
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+	
 }

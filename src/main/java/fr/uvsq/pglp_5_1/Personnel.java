@@ -32,6 +32,11 @@ public class Personnel implements PersonnelInterface{
 			
 		}
 		
+		public void print(){
+			System.out.print("nom : "+nom+" prenm : "+prenom+" fonction : "+fonction+" date de naissance : "+dateNaissance+
+					" numero de tel : ");
+		}
+		
 		public Personnel build()
 		{
 			return new Personnel(this);
@@ -50,8 +55,6 @@ public class Personnel implements PersonnelInterface{
 	public void print(){
 		System.out.print("nom : "+nom+" prenm : "+prenom+" fonction : "+fonction+" date de naissance : "+dateNaissance+
 				" numero de tel : ");
-		for(String i: numeroTelephone)
-			System.out.print(i+ " ");
 	}
 	
 	public int getId()
