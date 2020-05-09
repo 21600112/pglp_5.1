@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>fr.uvsq.21600112</groupId>
-  <artifactId>pglp_5.1</artifactId>
+  <artifactId>exo3_3</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -12,14 +12,55 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+	  <reporting>
+	    <plugins>
+		  <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-site-plugin</artifactId>
+			<version>3.3</version>
+		  </plugin>
+		  <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-project-info-reports-plugin</artifactId>
+			<version>2.7</version>
+		  </plugin>
+	      <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-javadoc-plugin</artifactId>
+	        <version>3.0.1</version>
+	        <configuration>
+	        </configuration>
+	      </plugin>
+	      <plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-checkstyle-plugin</artifactId>
+		    <version>3.0.0</version>
+		    <reportSets>
+			  <reportSet>
+			    <reports>
+				  <report>checkstyle</report>
+			    </reports>
+			  </reportSet>
+		    </reportSets>
+		  </plugin>
+	      <plugin>
+			<groupId>com.github.spotbugs</groupId>
+			<artifactId>spotbugs-maven-plugin</artifactId>
+			<version>3.1.8</version>
+		  </plugin>
+	    </plugins>
+	</reporting>
 </project>
